@@ -27,9 +27,13 @@ public class Arrow : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        if (collision.transform.tag != "Shield")
+        {
         hasHit = true;
         rb.velocity = Vector2.zero;
         rb.isKinematic = true;
         Object.Destroy(gameObject, 2.0f);
+        }
+
     }
 }

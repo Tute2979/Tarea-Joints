@@ -10,15 +10,11 @@ public class Collisions : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.transform.CompareTag("ground"))
+        if (collision.transform.tag == "Enemy")
         {
             Destroy(this.gameObject);
         }
-        if (collision.transform.tag == "ball")
-        {
-            Destroy(this.gameObject);
-        }
-        if (collision.transform.tag == "rock")
+        if (collision.transform.tag == "Arrow")
         {
             Destroy(this.gameObject);
             puntaje += 10;
